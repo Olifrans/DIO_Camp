@@ -4,25 +4,23 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Lista de Produtos e Categorias</h1>
+<h1>Lista de Categorias Cadastradas</h1>
 
     <div class="container-fluid">
         <!-- Breadcrumbs-->
-
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="#">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">Categorias</li>
-
         </ol>
+
         <!-- DataTables Example -->
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fas fa-table"></i>
                 Detalhes da Categoria
                 <a asp-action="Create" class="btn btn-info pull-right fa fa-plus">Adcionar Categoria</a>
-                @*<p> <a asp-action="Create" class="btn btn-info pull-right fa fa-plus">Cadastrar Nova Categoria</a></p>*@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -32,9 +30,11 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.Descricao)
                                 </th>
+                                <th>Operação</th>
                                 <th></th>
                             </tr>
                         </thead>
+
                         <tbody>
                             @foreach (var item in Model)
                             {
