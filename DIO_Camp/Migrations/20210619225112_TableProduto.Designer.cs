@@ -3,14 +3,16 @@ using DIO_Camp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DIO_Camp.Migrations
 {
     [DbContext(typeof(DioCampDbContext))]
-    partial class DioCampDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210619225112_TableProduto")]
+    partial class TableProduto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

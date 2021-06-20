@@ -11,7 +11,8 @@ namespace DIO_Camp.Models
         [Key]
         public int Id { get; set; }
         [Required(ErrorMessage ="Por favor informar a descrição da categoria")]
-        [Display(Name ="Nome da Categoria")]
+        [Display(Name ="Categorias")]
         public string Descricao { get; set; }
+        public List<Produto> Produto { get; set; }
     }
 }

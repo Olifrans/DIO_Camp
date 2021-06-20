@@ -6,30 +6,52 @@
 
 <h1>Lista de Produtos e Categorias</h1>
 
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Descricao)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Descricao)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-<p> <a asp-action="Create" class="btn btn-primary">Cadastrar Nova Categoria</a></p>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Categorias</li>
+
+        </ol>
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                Detalhes da Categoria
+                <a asp-action="Create" class="btn btn-info pull-right fa fa-plus">Adcionar Categoria</a>
+                @*<p> <a asp-action="Create" class="btn btn-info pull-right fa fa-plus">Cadastrar Nova Categoria</a></p>*@
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Descricao)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Descricao)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
